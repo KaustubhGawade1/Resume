@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaustubh Gawade - Resume</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/tabler-icons.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --color-background-primary: #ffffff;
+            --color-background-secondary: #f5f5f5;
+            --color-background-tertiary: #fafafa;
+            --color-background-info: #e6f1fb;
+            --color-text-primary: #1a1a1a;
+            --color-text-secondary: #666666;
+            --color-text-tertiary: #999999;
+            --color-text-info: #185fa5;
+            --color-border-tertiary: #e0e0e0;
+            --color-border-secondary: #d0d0d0;
+            --border-radius-md: 8px;
+            --border-radius-lg: 12px;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-background-primary: #1a1a1a;
+                --color-background-secondary: #2d2d2d;
+                --color-background-tertiary: #0f0f0f;
+                --color-background-info: #0c447c;
+                --color-text-primary: #ffffff;
+                --color-text-secondary: #b3b3b3;
+                --color-text-tertiary: #808080;
+                --color-text-info: #b5d4f4;
+                --color-border-tertiary: #404040;
+                --color-border-secondary: #505050;
+            }
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background: var(--color-background-tertiary);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--color-background-primary);
+            padding: 3rem;
+            min-height: 100vh;
+        }
+        
+        .header {
+            border-bottom: 2px solid var(--color-border-tertiary);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .name {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+        
+        .contact-info {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            font-size: 14px;
+            color: var(--color-text-secondary);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .contact-item a {
+            color: var(--color-text-info);
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+        
+        .contact-item a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+        
+        .summary {
+            background: var(--color-background-secondary);
+            padding: 1.25rem;
+            border-radius: var(--border-radius-lg);
+            margin-bottom: 2rem;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        
+        .section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--color-border-tertiary);
+            letter-spacing: -0.3px;
+        }
+        
+        .entry {
+            margin-bottom: 1.75rem;
+        }
+        
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .entry-title {
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+        }
+        
+        .entry-meta {
+            font-size: 14px;
+            color: var(--color-text-secondary);
+        }
+        
+        .entry-subtitle {
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .tech-stack {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin: 0.75rem 0;
+        }
+        
+        .tech-badge {
+            background: var(--color-background-secondary);
+            color: var(--color-text-primary);
+            padding: 0.35rem 0.75rem;
+            border-radius: var(--border-radius-md);
+            font-size: 12px;
+            font-weight: 500;
+            border: 0.5px solid var(--color-border-tertiary);
+        }
+        
+        .bullet-list {
+            list-style: none;
+            padding: 0;
+            margin: 0.75rem 0;
+        }
+        
+        .bullet-list li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.65rem;
+            position: relative;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .bullet-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--color-text-secondary);
+            font-weight: bold;
+        }
+        
+        .bullet-list strong {
+            font-weight: 600;
+            color: var(--color-text-primary);
+        }
+        
+        .achievement-badge {
+            display: inline-block;
+            background: var(--color-background-info);
+            color: var(--color-text-info);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius-md);
+            font-size: 13px;
+            font-weight: 600;
+            margin-right: 0.75rem;
+            margin-bottom: 0.5rem;
+            border: 0.5px solid var(--color-border-secondary);
+        }
+        
+        .achievement-text {
+            margin-top: 1rem;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--color-text-secondary);
+        }
+        
+        .controls {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--color-border-tertiary);
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 0.65rem 1.25rem;
+            border: 0.5px solid var(--color-border-secondary);
+            background: var(--color-background-primary);
+            color: var(--color-text-primary);
+            border-radius: var(--border-radius-md);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+        
+        .btn:hover {
+            background: var(--color-background-secondary);
+        }
+        
+        .btn:active {
+            transform: scale(0.98);
+        }
+        
+        @media print {
+            .controls {
+                display: none;
+            }
+            
+            body {
+                background: white;
+            }
+            
+            .container {
+                max-width: 100%;
+                padding: 0;
+                box-shadow: none;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 1.5rem;
+            }
+            
+            .name {
+                font-size: 24px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .entry-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .section {
+                margin-bottom: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="name">Kaustubh Gawade</div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <svg class="icon" style="width: 16px; height: 16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                    <a href="tel:7820832647">7820832647</a>
+                </div>
+                <div class="contact-item">
+                    <svg class="icon" style="width: 16px; height: 16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                    </svg>
+                    <a href="mailto:gawadekaustubh67@gmail.com">gawadekaustubh67@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <svg class="icon" style="width: 16px; height: 16px;" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    <a href="https://github.com/KaustubhGawade1" target="_blank">GitHub</a>
+                </div>
+                <div class="contact-item">
+                    <svg class="icon" style="width: 16px; height: 16px;" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.731-2.004 1.438-.103.25-.129.599-.129.948v5.419h-3.554s.047-8.789 0-9.703h3.554v1.373c.43-.665 1.198-1.61 2.913-1.61 2.122 0 3.716 1.388 3.716 4.368v5.572zM5.337 8.855c-1.144 0-1.915-.758-1.915-1.71 0-.955.77-1.71 1.944-1.71 1.173 0 1.915.755 1.94 1.71 0 .952-.767 1.71-1.969 1.71zm1.581 11.597H3.635V9.749h3.283v10.703zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
+                    </svg>
+                    <a href="https://www.linkedin.com/authwall?trkInfo=AQGb7-v1M8dTYgAAAZ5PIwJ4Ep9OnzckbDee9lw6LpSxOQvOsOgdlwWlrlr_JwX-pqBCzU6RUL9dxE4BagTficZfM2UO8G07fHtLPuMyaPo6Jip-OmBG5MuXDMI6ec7rmwBD3-Y=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fkaustubh-gawade-300004305%3Futm_source%3Dshare%26utm_campaign%3Dshare_via%26utm_content%3Dprofile%26utm_medium%3Dandroid_app" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary -->
+        <div class="summary">
+            Computer Science Junior with hands-on experience building backend applications using Java and Spring Boot. Developed microservices-based systems with secure REST APIs and containerized deployments, focusing on scalable and maintainable application design.
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <div class="section-title">Education</div>
+            <div class="entry">
+                <div class="entry-header">
+                    <div class="entry-title">B.Tech in Computer Science And Business System</div>
+                    <div class="entry-meta">CGPA: 8.15</div>
+                </div>
+                <div class="entry-subtitle">JSPM's Rajarshi Shahu College of Engineering, Pune, Maharashtra</div>
+            </div>
+        </div>
+
+        <!-- Technical Skills -->
+        <div class="section">
+            <div class="section-title">Technical Skills</div>
+            <div class="entry">
+                <div class="entry-title">Languages & Frameworks</div>
+                <div class="tech-stack">
+                    <span class="tech-badge">Java 21</span>
+                    <span class="tech-badge">Spring Boot 3</span>
+                    <span class="tech-badge">Spring Cloud</span>
+                    <span class="tech-badge">Spring Security + JWT</span>
+                    <span class="tech-badge">React.js</span>
+                </div>
+            </div>
+            <div class="entry">
+                <div class="entry-title">Tools & Concepts</div>
+                <div class="tech-stack">
+                    <span class="tech-badge">Kubernetes</span>
+                    <span class="tech-badge">Docker</span>
+                    <span class="tech-badge">REST APIs</span>
+                    <span class="tech-badge">PostgreSQL</span>
+                    <span class="tech-badge">Maven</span>
+                    <span class="tech-badge">Git</span>
+                    <span class="tech-badge">Microservices</span>
+                    <span class="tech-badge">Apache Kafka</span>
+                    <span class="tech-badge">Elasticsearch</span>
+                    <span class="tech-badge">RabbitMQ</span>
+                    <span class="tech-badge">Zipkin</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="section">
+            <div class="section-title">Projects</div>
+            
+            <div class="entry">
+                <a href="https://github.com/KaustubhGawade1/Microservices-based-Asset-Management-Platform" target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="entry-title" style="color: var(--color-text-info); cursor: pointer;">Microservices-based Asset Management Platform</div>
+                </a>
+                <div class="entry-subtitle">Java 21 | Spring Boot 3 | Spring Cloud | REST API | PostgreSQL | Docker | Kubernetes | RabbitMQ | Zipkin</div>
+                <ul class="bullet-list">
+                    <li><strong>Microservices Architecture:</strong> Architected and developed a scalable microservices-based system (Auth, Admin, Asset services) using Java 21 and Spring Boot 3, ensuring modularity and maintainability.</li>
+                    <li><strong>Security & Identity:</strong> Implemented secure authentication and authorization using Spring Security 6 and JWT, including custom filters and Role-Based Access Control (RBAC) across services.</li>
+                    <li><strong>Kubernetes-Native Deployment:</strong> Containerized services using Docker and deployed on Kubernetes (Minikube), leveraging Service Discovery and ConfigMaps to eliminate legacy Eureka/Config Server dependencies.</li>
+                    <li><strong>Inter-Service Communication:</strong> Enabled inter-service communication using Spring Cloud OpenFeign (sync) and RabbitMQ (async), improving decoupling, fault tolerance, and scalability.</li>
+                    <li><strong>Observability & Monitoring:</strong> Integrated Zipkin for distributed tracing and Micrometer for metrics, supporting real-time latency monitoring and end-to-end request tracking.</li>
+                    <li><strong>Full-Stack Implementation:</strong> Built a responsive SPA dashboard using React + Vite, consuming REST APIs for real-time asset management and active user monitoring.</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <a href="https://github.com/KaustubhGawade1/log-analyzer-service" target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="entry-title" style="color: var(--color-text-info); cursor: pointer;">AI Log Analyzer & Root Cause Detection System</div>
+                </a>
+                <div class="entry-subtitle">Java 21 | Spring Boot 3 | Spring AI | Apache Kafka | Elasticsearch | PostgreSQL | Docker</div>
+                <ul class="bullet-list">
+                    <li><strong>Event-Driven Pipeline:</strong> Built real-time log ingestion using Apache Kafka and Spring Kafka for distributed microservices.</li>
+                    <li><strong>Intelligent Analysis:</strong> Implemented log normalization, SHA-256-based error clustering, and sliding-window anomaly detection for error bursts.</li>
+                    <li><strong>AI Root Cause Analysis:</strong> Integrated Spring AI with OpenAI to auto-generate root cause summaries and remediation actions with confidence scores.</li>
+                    <li><strong>Hybrid Persistence:</strong> Used Elasticsearch for full-text log search and PostgreSQL for incident lifecycle management.</li>
+                    <li><strong>Automated Alerting:</strong> Developed incident detection and alerting system that triggers real-time console alerts on anomalies.</li>
+                    <li><strong>React Dashboard:</strong> Created responsive SPA with Vite and Recharts for live visualization of logs, incidents, and error clusters.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Achievements -->
+        <div class="section">
+            <div class="section-title">Achievements</div>
+            <div class="entry">
+                <div class="achievement-badge">🏆 2nd Prize - Recursion Coding Competition at JSPM RSCOE</div>
+                <div class="achievement-badge">📍 Innovision Hackathon (Feb 2025)</div>
+            </div>
+            <div class="achievement-text">
+                <p>Contributed as part of the Technical team at Innovision (5th–6th February 2025), helping streamline the hackathon on Devfolio and manage participant queries. This experience improved problem-solving, teamwork, and attention to detail.</p>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button class="btn" onclick="printResume()">
+                <svg style="width: 16px; height: 16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect>
+                </svg>
+                Print / Save as PDF
+            </button>
+            <button class="btn" onclick="copyLink()">
+                <svg style="width: 16px; height: 16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+                Copy Link
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function printResume() {
+            window.print();
+        }
+
+        function copyLink() {
+            const url = window.location.href;
+            navigator.clipboard.writeText(url).then(() => {
+                const btn = event.target.closest('.btn');
+                const original = btn.innerHTML;
+                btn.innerHTML = '<svg style="width: 16px; height: 16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Copied!';
+                btn.style.opacity = '0.7';
+                setTimeout(() => {
+                    btn.innerHTML = original;
+                    btn.style.opacity = '1';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
